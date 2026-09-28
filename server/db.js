@@ -357,6 +357,57 @@ export function seedData(db) {
         "Scale-Up",
         1
       );
+
+      insertChallenge.run(
+        6,
+        "Decentralized Solar Cold Storage for Perishable Crops",
+        "Department of Agriculture & Farmers Welfare",
+        "Off-grid 5MT solar thermal battery cold storage units at rural primary agricultural produce collection centres.",
+        "Slash post-harvest tomato and horticultural crop spoilage by 40% in remote farm clusters.",
+        "Phase Change Materials, Solar Thermal, IoT Temperature Logging",
+        "₹35,00,000 - ₹60,00,000",
+        "4 Months",
+        "DPIIT recognized, ICAR/NABARD validated pilot track record",
+        "Continuous 4°C storage across 72-hour cloudy weather spells",
+        "2026-12-10",
+        "Open",
+        "Startup Discovery",
+        2
+      );
+
+      insertChallenge.run(
+        7,
+        "AI Point-of-Care Diagnostic Screen for Rural Health Sub-Centres",
+        "National Health Mission",
+        "Battery-powered handheld multi-vital analyzer screening anemia, ECG abnormalities, and vitals in offline primary health centers.",
+        "Immediate specialist tele-triage referral for high-risk obstetric and cardiovascular patients.",
+        "Edge AI Biosensors, Telemedicine, Low-Power Bluetooth",
+        "₹28,00,000 - ₹45,00,000",
+        "3 Months",
+        "DPIIT recognized, CDSCO approved or ISO 13485 certified",
+        "95% diagnostic concord with laboratory gold standards",
+        "2026-11-28",
+        "Evaluation",
+        "Expert Evaluation",
+        2
+      );
+
+      insertChallenge.run(
+        8,
+        "Autonomous Drone Surveillance for Forest Fire Early Warning",
+        "Department of Environment & Forests",
+        "Autonomous thermal-infrared long-range drone patrols over dry deciduous forest tracts to detect micro-smoke plumes.",
+        "Alert fire ranger beat officers within 15 minutes of ignition to contain ground fires before crown burns.",
+        "Autonomous UAVs, Thermal Infrared, Edge Computer Vision",
+        "₹32,00,000 - ₹55,00,000",
+        "3 Months",
+        "DPIIT recognized, DGCA type-certified UAS manufacturer",
+        "Detection of 0.5m embers from 300m altitude within 10 minutes",
+        "2026-12-15",
+        "Open",
+        "Startup Discovery",
+        1
+      );
       insertChallenge.finalize();
 
       // 2. Startups (8 startups)
@@ -503,6 +554,40 @@ export function seedData(db) {
         1,
         "DPIIT Certificate, CDSCO Medical Device Class B Registration"
       );
+
+      insertStartup.run(
+        9,
+        "KrishiSheet ColdTech",
+        "Harpreet Singh & Simran Kaur",
+        "Decentralized Thermal Battery Solar Cold Storage",
+        "Agriculture Technology",
+        "Phase Change Materials / Solar Thermal / IoT",
+        3,
+        1,
+        "DIPP88312",
+        16,
+        "KrishiSheet provides modular 5MT cold storage rooms powered by phase change thermal batteries with 72-hour thermal backup without diesel generators.",
+        "Punjab Mandi Board pilot in Abohar kinnow citrus belt, Haryana HAFED validation.",
+        1,
+        "DPIIT Certificate, ICAR Test Certificate, Patent IN-2024-1102"
+      );
+
+      insertStartup.run(
+        10,
+        "VanaDrishti Drones",
+        "Alok Nanda & Ritu Rawat",
+        "Autonomous Thermal Forest Fire Early Alert UAS",
+        "Disaster Management & Forestry",
+        "Thermal UAV / Computer Vision / Satellite Relay",
+        3,
+        1,
+        "DIPP44902",
+        13,
+        "VanaDrishti designs BVLOS long-endurance drones equipped with dual optical-thermal sensor payloads for continuous automated wildfire surveillance.",
+        "Uttarakhand Forest Department pilot in Rajaji National Park corridor.",
+        1,
+        "DPIIT Certificate, DGCA UAS Type Approval Certificate, ISO 9001:2015"
+      );
       insertStartup.finalize();
 
       // 3. Applications (8 applications)
@@ -609,6 +694,30 @@ export function seedData(db) {
         "60 Days",
         1, 1, 1, 1, 1
       );
+
+      // Challenge 6 (Solar Cold Storage) -> Startup 9 (KrishiSheet)
+      insertApp.run(
+        9,
+        6,
+        9,
+        "Approved",
+        "Installation of two 5MT phase-change thermal battery units at mandi yard with digital humidity sensors.",
+        "₹42,00,000",
+        "120 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 8 (Forest Fire Drone) -> Startup 10 (VanaDrishti)
+      insertApp.run(
+        10,
+        8,
+        10,
+        "Approved",
+        "Daily autonomous flight schedules over 20,000 hectares of forest reserve with real-time smoke plume coordinates.",
+        "₹44,00,000",
+        "90 Days",
+        1, 1, 1, 1, 1
+      );
       insertApp.finalize();
 
       // 4. Evaluations (4 evaluations)
@@ -672,6 +781,34 @@ export function seedData(db) {
         93.0,
         91.0,
         "Demonstrated clear ROI during Phase 1 pilot. Battery cycling algorithms protect cell lifespan while generating verifiable power bill savings.",
+        "Approved for Pilot"
+      );
+
+      insertEval.run(
+        5,
+        9,
+        "Dr. S. K. Mahapatra (ICAR Agricultural Engineering Institute)",
+        90.0,
+        92.0,
+        88.0,
+        82.0,
+        92.0,
+        89.0,
+        "KrishiSheet phase change thermal battery technology eliminates recurring diesel generator operating costs.",
+        "Approved for Pilot"
+      );
+
+      insertEval.run(
+        6,
+        10,
+        "Er. Alok Ranjan (Forest Survey Directorate)",
+        92.0,
+        94.0,
+        90.0,
+        88.0,
+        93.0,
+        91.5,
+        "VanaDrishti dual optical-thermal payload delivers high accuracy early ember detection even in dense canopies.",
         "Approved for Pilot"
       );
       insertEval.finalize();
@@ -754,6 +891,29 @@ export function seedData(db) {
         "Battery Life Optimization Audit",
         "Completed",
         "State Regulatory Commission Clearance",
+        "Completed",
+        "Completed"
+      );
+
+      // Pilot 4: VanaDrishti on Forest Fire Early Warning
+      insertPilot.run(
+        4,
+        10,
+        8,
+        10,
+        "Department of Environment & Forests",
+        "Autonomous thermal UAV patrols over 20,000 hectares of forest reserve to detect micro-smoke plumes.",
+        "90 Days",
+        "₹44,00,000",
+        "2026-07-01",
+        "2026-09-30",
+        "Base Station Antenna & UAV Commissioning",
+        "Completed",
+        "Thermal Mapping of High Risk Ridge Lines",
+        "Completed",
+        "Controlled Burn Flare Detection Verification",
+        "Completed",
+        "Forest Survey Directorate Sign-Off",
         "Completed",
         "Completed"
       );
@@ -841,6 +1001,30 @@ export function seedData(db) {
         "Significant tariff reduction achieved on commercial grid power draw.",
         "Validated by National Institute of Solar Energy"
       );
+
+      insertPerf.run(
+        4,
+        4,
+        "Detection Radius Coverage",
+        "5.0 km",
+        "7.4 km",
+        "+2.4 km (Exceeded)",
+        "TARGET ACHIEVED",
+        "Response Notification Alert",
+        "15 min",
+        "12 min",
+        "-3 min (Faster)",
+        "TARGET ACHIEVED",
+        "False Positive Trigger Rate",
+        "< 5%",
+        "1.2%",
+        "-3.8% (Lower)",
+        "TARGET ACHIEVED",
+        "TARGET ACHIEVED",
+        "Thermal infrared sensors pinpointed test campfires under thick sal tree canopies within 12 minutes.",
+        "Chief Conservator of Forests issued technical validation clearance.",
+        "Validated by Forest Survey Directorate & Remote Sensing Center"
+      );
       insertPerf.finalize();
 
       // 7. Procurement Decisions (2 decisions)
@@ -885,6 +1069,23 @@ export function seedData(db) {
         "Approved under Special Public Procurement Framework for Startups. Annual state license contract executed.",
         "GFR 2017 Rule 149 / Single Source Proven Innovation"
       );
+
+      // Pilot 4: Forest Fire Early Warning Drone Pilot Approved
+      insertProc.run(
+        3,
+        4,
+        10,
+        8,
+        "₹44,00,000",
+        "Pilot Validated: 20,000 Hectares Patrolled",
+        "All KPIs Exceeded (12 min alert vs 15 min target)",
+        "Score: 91.5 / 100 (Er. Alok Ranjan)",
+        "Certified by Forest Survey Directorate",
+        "PROCUREMENT APPROVED",
+        "2026-09-25",
+        "Procurement sanctioned for state wildlife division under special disaster management innovation provisions.",
+        "GFR 2017 Rule 149 / Single Source Proven Innovation"
+      );
       insertProc.finalize();
 
       // 8. Milestone Payments
@@ -903,6 +1104,11 @@ export function seedData(db) {
       insertPay.run(6, 2, 2, "Milestone 2 — Language Dialect Training", 100000, "Paid", "2026-06-30", "PFMS-TXN-2026-7281");
       insertPay.run(7, 2, 3, "Milestone 3 — Full Portal Integration", 100000, "Paid", "2026-07-31", "PFMS-TXN-2026-8012");
       insertPay.run(8, 2, 4, "Milestone 4 — Final Governance Sign-Off", 45000, "Paid", "2026-08-20", "PFMS-TXN-2026-8919");
+
+      insertPay.run(9, 4, 1, "Milestone 1 — Base Station Commissioning", 100000, "Paid", "2026-07-15", "PFMS-TXN-2026-1102");
+      insertPay.run(10, 4, 2, "Milestone 2 — Thermal Ridge Mapping", 120000, "Paid", "2026-08-15", "PFMS-TXN-2026-2204");
+      insertPay.run(11, 4, 3, "Milestone 3 — Controlled Flare Testing", 120000, "Paid", "2026-09-10", "PFMS-TXN-2026-3309");
+      insertPay.run(12, 4, 4, "Milestone 4 — Final Forestry Sign-Off", 100000, "Paid", "2026-09-28", "PFMS-TXN-2026-4411");
       insertPay.finalize();
 
       // 9. Scaled Solutions
@@ -941,6 +1147,20 @@ export function seedData(db) {
         "READY FOR SCALE-UP",
         null
       );
+
+      insertScale.run(
+        3,
+        3,
+        10,
+        "VanaDrishti Drones",
+        "Autonomous Drone Surveillance for Forest Fire Early Warning",
+        1,
+        2,
+        8,
+        16,
+        "READY FOR SCALE-UP",
+        "2026-09-28"
+      );
       insertScale.finalize();
 
       // 10. Notifications
@@ -955,6 +1175,7 @@ export function seedData(db) {
       insertNotif.run(3, "Pilot Milestone Completed", "WaterSense completed Milestone 2 'Field Acoustic Telemetry Testing'.", "pilot", 0, "2026-09-27 14:00:00");
       insertNotif.run(4, "Performance Validation Required", "Pilot #1 reached final benchmark criteria. PWD audit report submitted.", "performance", 0, "2026-09-27 15:45:00");
       insertNotif.run(5, "Procurement Decision Pending", "WaterSense pilot validation approved. Awaiting Procurement Authority sanction.", "procurement", 0, "2026-09-27 16:20:00");
+      insertNotif.run(6, "Scale-Up Authorization Completed", "Statewide expansion authorized for WaterSense across 5 departments.", "scale", 1, "2026-09-28 09:00:00");
       insertNotif.finalize();
 
       // 11. Documents
@@ -972,6 +1193,8 @@ export function seedData(db) {
       insertDoc.run(6, "Pilot Telemetry & Sensor Performance Report", "Performance Report", "pilot", 1, "WaterSense_Performance_Audit_NIUA.pdf", "3.4 MB", "2026-08-30", "Verified");
       insertDoc.run(7, "Independent Third-Party Validation Certificate", "Validation Report", "pilot", 1, "NIUA_ThirdParty_Validation_Cert.pdf", "1.1 MB", "2026-09-18", "Approved");
       insertDoc.run(8, "Competent Authority Procurement Sanction Order", "Procurement Decision", "procurement", 1, "Govt_Sanction_Order_GFR149_Proc.pdf", "880 KB", "2026-09-22", "Pending Release");
+      insertDoc.run(9, "DGCA UAS Type Approval Certificate — VanaDrishti", "Startup Registration", "startup", 10, "DGCA-UAS-VANA-2026.pdf", "1.8 MB", "2026-07-15", "Verified");
+      insertDoc.run(10, "Multi-District Scale-Up Deployment Sanction Order", "Procurement Decision", "procurement", 3, "Scale-Sanction-Order-2026.pdf", "1.3 MB", "2026-09-28", "Sanctioned");
       insertDoc.finalize();
 
       console.log("Database seeded successfully with ProcureFlow enterprise sample dataset!");
