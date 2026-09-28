@@ -4,6 +4,7 @@
  */
 
 const SEED_DATA = {
+  version: 3,
   challenges: [
     {
       id: 1,
@@ -36,7 +37,7 @@ const SEED_DATA = {
       submission_deadline: "2026-11-20",
       status: "Evaluation",
       stage: "Expert Evaluation",
-      applications_count: 2,
+      applications_count: 3,
       created_at: "2026-09-22"
     },
     {
@@ -53,7 +54,7 @@ const SEED_DATA = {
       submission_deadline: "2026-11-30",
       status: "Pilot",
       stage: "Controlled Field Pilot",
-      applications_count: 2,
+      applications_count: 3,
       created_at: "2026-09-24"
     },
     {
@@ -87,7 +88,7 @@ const SEED_DATA = {
       submission_deadline: "2026-10-31",
       status: "Scaled",
       stage: "Statewide Scale-Up",
-      applications_count: 3,
+      applications_count: 2,
       created_at: "2026-09-26"
     },
     {
@@ -104,7 +105,7 @@ const SEED_DATA = {
       submission_deadline: "2026-12-10",
       status: "Open",
       stage: "Startup Discovery",
-      applications_count: 2,
+      applications_count: 3,
       created_at: "2026-09-27"
     },
     {
@@ -121,7 +122,7 @@ const SEED_DATA = {
       submission_deadline: "2026-11-28",
       status: "Evaluation",
       stage: "Expert Evaluation",
-      applications_count: 2,
+      applications_count: 1,
       created_at: "2026-09-27"
     },
     {
@@ -131,14 +132,48 @@ const SEED_DATA = {
       problem_description: "Autonomous thermal-infrared long-range drone patrols over dry deciduous forest tracts to detect micro-smoke plumes.",
       expected_outcome: "Alert fire ranger beat officers within 15 minutes of ignition to contain ground fires before crown burns.",
       required_technology: "Autonomous UAVs, Thermal Infrared, Edge Computer Vision",
-      budget_range: "₹32,0,000 - ₹55,00,000",
+      budget_range: "₹32,00,000 - ₹55,00,000",
       pilot_duration: "3 Months",
       eligibility_requirements: "DPIIT recognized, DGCA type-certified UAS manufacturer",
       expected_kpis: "Detection of 0.5m embers from 300m altitude within 10 minutes",
       submission_deadline: "2026-12-15",
+      status: "Pilot",
+      stage: "Controlled Field Pilot",
+      applications_count: 1,
+      created_at: "2026-09-28"
+    },
+    {
+      id: 9,
+      title: "Smart Urban Traffic Adaptive Signal Control",
+      department: "Traffic Police & Transport Department",
+      problem_description: "AI-driven visual queue length calculation and dynamic green light duration adjustment at 24 busy metropolitan intersections.",
+      expected_outcome: "Reduce peak hour vehicular congestion delay by 25% and prioritize emergency corridor transits.",
+      required_technology: "Computer Vision, Edge Inference, Traffic Controller API",
+      budget_range: "₹30,00,000 - ₹48,00,000",
+      pilot_duration: "3 Months",
+      eligibility_requirements: "DPIIT recognized, proven intersection control hardware telemetry",
+      expected_kpis: "20% reduction in vehicle wait idling, zero controller desync incidents",
+      submission_deadline: "2026-12-20",
       status: "Open",
       stage: "Startup Discovery",
       applications_count: 1,
+      created_at: "2026-09-28"
+    },
+    {
+      id: 10,
+      title: "Groundwater Aquifer Depletion & Quality Telemetry Mesh",
+      department: "Water Resources & Ground Water Authority",
+      problem_description: "Deep borewell hydro-acoustic probes continuously tracking subterranean water table drops and salinity ingress in over-exploited blocks.",
+      expected_outcome: "Digital dashboard warning of critical dry zones and contamination ingress before seasonal pump failure.",
+      required_technology: "Hydrostatic Level Sensors, Sub-GHz Mesh Telemetry, Cloud Analytics",
+      budget_range: "₹26,00,000 - ₹42,00,000",
+      pilot_duration: "4 Months",
+      eligibility_requirements: "DPIIT recognized, CGWB calibrated sensor instrumentation",
+      expected_kpis: "99% transmission reliability through subsurface depths up to 250m",
+      submission_deadline: "2026-12-25",
+      status: "Evaluation",
+      stage: "Expert Evaluation",
+      applications_count: 2,
       created_at: "2026-09-28"
     }
   ],
@@ -313,9 +348,112 @@ const SEED_DATA = {
       is_eligible: 1,
       matchScore: 91,
       location: "Dehradun, Uttarakhand"
+    },
+    {
+      id: 11,
+      name: "GatiMarg AI",
+      founder: "Siddharth Sen & Bhavna Patel",
+      solution: "Adaptive Traffic Queue Signal Controller",
+      industry: "Urban Mobility & Smart Cities",
+      technology: "Computer Vision / Edge ML / ITS Controller",
+      years_experience: 3,
+      dpiit_recognized: 1,
+      dpiit_number: "DIPP55819",
+      team_size: 12,
+      description: "GatiMarg AI installs edge vision sensors on intersection gantry poles to dynamically regulate green signal cycles according to real-time traffic volume.",
+      previous_projects: "Thane Traffic Police 10-junction pilot, Ahmedabad BRTS corridor trial.",
+      is_eligible: 1,
+      matchScore: 84,
+      location: "Mumbai, Maharashtra"
+    },
+    {
+      id: 12,
+      name: "BhuJal Analytics",
+      founder: "Naveen Reddy & Archana Das",
+      solution: "Subterranean Groundwater Table Probe Telemetry",
+      industry: "Water Resources",
+      technology: "Hydrostatic Probes / Sub-GHz Mesh / Cloud GIS",
+      years_experience: 4,
+      dpiit_recognized: 1,
+      dpiit_number: "DIPP66103",
+      team_size: 15,
+      description: "BhuJal Analytics deploys ruggedized deep borehole sensors that deliver hourly groundwater level and salinity trends via long-range mesh radio.",
+      previous_projects: "Telangana Mission Bhagiratha recharge aquifer trial, CGWB Anantapur block pilot.",
+      is_eligible: 1,
+      matchScore: 86,
+      location: "Hyderabad, Telangana"
+    },
+    {
+      id: 13,
+      name: "SwachhVayu Systems",
+      founder: "Manish Agarwal & Sonia Bose",
+      solution: "Low-Power Ambient PM2.5 Micro-Scrubbers",
+      industry: "Environmental Tech",
+      technology: "Electrostatic Precipitators / IoT Air Telemetry",
+      years_experience: 2,
+      dpiit_recognized: 1,
+      dpiit_number: "DIPP71904",
+      team_size: 10,
+      description: "SwachhVayu deploys low-drag electrostatic air filtration nodes on street light poles to scrub particulate matter in urban hotspots.",
+      previous_projects: "Kanpur industrial belt air quality mitigation trial.",
+      is_eligible: 1,
+      matchScore: 79,
+      location: "Lucknow, Uttar Pradesh"
+    },
+    {
+      id: 14,
+      name: "NetraSuraksha AI",
+      founder: "Arun Pandian & Deepa Nair",
+      solution: "Privacy-Preserving Edge Video Surveillance",
+      industry: "Public Safety & AI",
+      technology: "Edge TPU / Computer Vision / Anomaly Detection",
+      years_experience: 3,
+      dpiit_recognized: 1,
+      dpiit_number: "DIPP83210",
+      team_size: 14,
+      description: "NetraSuraksha builds edge-processed video analytics for crowd management, perimeter breaches, and child safety in public infrastructure.",
+      previous_projects: "Tirupati Pilgrim Queue Management System, Chennai Metro rail trial.",
+      is_eligible: 1,
+      matchScore: 82,
+      location: "Coimbatore, Tamil Nadu"
+    },
+    {
+      id: 15,
+      name: "KisanDoot BioTech",
+      founder: "Gopal Krishna & Shweta Joshi",
+      solution: "Spectroscopic Soil Nutrient & Nitrate Probes",
+      industry: "Agriculture Technology",
+      technology: "NIR Spectrometry / IoT / Agronomic AI",
+      years_experience: 3,
+      dpiit_recognized: 1,
+      dpiit_number: "DIPP94012",
+      team_size: 11,
+      description: "KisanDoot manufactures portable handheld soil spectroscopy devices providing instant NPK and moisture readouts in 90 seconds without chemical reagents.",
+      previous_projects: "Vidarbha cotton belt soil health card digitization trial.",
+      is_eligible: 1,
+      matchScore: 86,
+      location: "Nagpur, Maharashtra"
+    },
+    {
+      id: 16,
+      name: "SetuCyber Shield",
+      founder: "Aditya Singhal & Rashi Gupta",
+      solution: "Government e-Portal Zero-Trust Vulnerability Sensor",
+      industry: "Cybersecurity & GovTech",
+      technology: "Zero-Trust Architecture / Threat Intel / WAF",
+      years_experience: 4,
+      dpiit_recognized: 1,
+      dpiit_number: "DIPP38901",
+      team_size: 17,
+      description: "SetuCyber provides automated vulnerability scanners and real-time behavioral DDoS mitigation specialized for state portal architectures.",
+      previous_projects: "Haryana State Data Centre compliance audit, CERT-In advisory integration.",
+      is_eligible: 1,
+      matchScore: 81,
+      location: "Gurugram, Haryana"
     }
   ],
 
+  // EXACTLY 20 APPLICATIONS AS REQUESTED
   applications: [
     {
       id: 1,
@@ -334,7 +472,7 @@ const SEED_DATA = {
       checklist_technology: 1,
       checklist_experience: 1,
       checklist_compliance: 1,
-      evaluation_score: 84.9,
+      evaluation_score: 87.2,
       submitted_at: "2026-09-24"
     },
     {
@@ -347,13 +485,13 @@ const SEED_DATA = {
       dpiit_number: "DIPP54129",
       status: "Under Review",
       proposal_summary: "Automated ultrasonic fill-level sensors with daily dynamic collection truck dispatch optimization.",
-      proposed_budget: "₹18,00,000",
-      proposed_timeline: "60 Days",
+      proposed_budget: "₹19,80,000",
+      proposed_timeline: "75 Days",
       checklist_dpiit: 1,
       checklist_documents: 1,
       checklist_technology: 1,
       checklist_experience: 1,
-      checklist_compliance: 1,
+      checklist_compliance: 0,
       evaluation_score: 81.2,
       submitted_at: "2026-09-23"
     },
@@ -367,8 +505,8 @@ const SEED_DATA = {
       dpiit_number: "DIPP89211",
       status: "Eligible",
       proposal_summary: "Edge TPU camera installations at entry gates of 50 model schools with instantaneous SMS gateway integration.",
-      proposed_budget: "₹24,50,000",
-      proposed_timeline: "90 Days",
+      proposed_budget: "₹28,00,000",
+      proposed_timeline: "100 Days",
       checklist_dpiit: 1,
       checklist_documents: 1,
       checklist_technology: 1,
@@ -387,7 +525,7 @@ const SEED_DATA = {
       dpiit_number: "DIPP62310",
       status: "Under Review",
       proposal_summary: "Non-invasive ultrasonic clamp-on sensors with cellular NB-IoT telemetry to monitor water supply mains.",
-      proposed_budget: "₹32,00,000",
+      proposed_budget: "₹34,00,000",
       proposed_timeline: "90 Days",
       checklist_dpiit: 1,
       checklist_documents: 1,
@@ -476,6 +614,246 @@ const SEED_DATA = {
       checklist_compliance: 1,
       evaluation_score: 91.5,
       submitted_at: "2026-09-28"
+    },
+    {
+      id: 9,
+      challenge_id: 3,
+      challenge_title: "AI-Based Water Leakage Detection",
+      department: "Public Works Department",
+      startup_id: 5,
+      startup_name: "PipeAI Innovations",
+      dpiit_number: "DIPP41108",
+      status: "Under Review",
+      proposal_summary: "Robotic crawler internal pipe visual inspections inside 5km trunk line during night pressure tests.",
+      proposed_budget: "₹32,00,000",
+      proposed_timeline: "75 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 0,
+      checklist_compliance: 1,
+      evaluation_score: 75.5,
+      submitted_at: "2026-09-25"
+    },
+    {
+      id: 10,
+      challenge_id: 6,
+      challenge_title: "Decentralized Solar Cold Storage for Perishable Crops",
+      department: "Department of Agriculture & Farmers Welfare",
+      startup_id: 7,
+      startup_name: "GreenWatts Grid",
+      dpiit_number: "DIPP33901",
+      status: "Eligible",
+      proposal_summary: "Hybrid solar rooftop with integrated BESS battery pack to maintain chiller cold chain temperatures uninterrupted.",
+      proposed_budget: "₹48,00,000",
+      proposed_timeline: "150 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 88.0,
+      submitted_at: "2026-09-26"
+    },
+    {
+      id: 11,
+      challenge_id: 9,
+      challenge_title: "Smart Urban Traffic Adaptive Signal Control",
+      department: "Traffic Police & Transport Department",
+      startup_id: 11,
+      startup_name: "GatiMarg AI",
+      dpiit_number: "DIPP55819",
+      status: "Eligible",
+      proposal_summary: "Computer vision intersection edge units delivering dynamic green split adjustments across 24 critical junctions.",
+      proposed_budget: "₹36,00,000",
+      proposed_timeline: "90 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 84.0,
+      submitted_at: "2026-09-27"
+    },
+    {
+      id: 12,
+      challenge_id: 10,
+      challenge_title: "Groundwater Aquifer Depletion & Quality Telemetry Mesh",
+      department: "Water Resources & Ground Water Authority",
+      startup_id: 12,
+      startup_name: "BhuJal Analytics",
+      dpiit_number: "DIPP66103",
+      status: "Eligible",
+      proposal_summary: "Mesh-connected digital piezometers and conductivity probes deployed across 30 state monitoring borewells.",
+      proposed_budget: "₹29,50,000",
+      proposed_timeline: "90 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 85.5,
+      submitted_at: "2026-09-28"
+    },
+    {
+      id: 13,
+      challenge_id: 4,
+      challenge_title: "Real-Time Industrial Effluent Monitoring",
+      department: "Pollution Control Board",
+      startup_id: 13,
+      startup_name: "SwachhVayu Systems",
+      dpiit_number: "DIPP71904",
+      status: "Under Review",
+      proposal_summary: "Integration of optical spectrometry probes at factory outlet canals with tamper-proof automated alerts.",
+      proposed_budget: "₹26,00,000",
+      proposed_timeline: "60 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 0,
+      checklist_compliance: 1,
+      evaluation_score: 79.0,
+      submitted_at: "2026-09-26"
+    },
+    {
+      id: 14,
+      challenge_id: 2,
+      challenge_title: "Automated School Attendance Verification",
+      department: "School Education Department",
+      startup_id: 14,
+      startup_name: "NetraSuraksha AI",
+      dpiit_number: "DIPP83210",
+      status: "Under Review",
+      proposal_summary: "Dual camera doorway units with privacy blurring and localized edge face feature matching.",
+      proposed_budget: "₹31,00,000",
+      proposed_timeline: "90 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 0,
+      evaluation_score: 82.5,
+      submitted_at: "2026-09-24"
+    },
+    {
+      id: 15,
+      challenge_id: 6,
+      challenge_title: "Decentralized Solar Cold Storage for Perishable Crops",
+      department: "Department of Agriculture & Farmers Welfare",
+      startup_id: 15,
+      startup_name: "KisanDoot BioTech",
+      dpiit_number: "DIPP94012",
+      status: "Eligible",
+      proposal_summary: "Cold storage temperature and atmospheric nitrogen balance logging system with farmer mobile alerts.",
+      proposed_budget: "₹38,00,000",
+      proposed_timeline: "120 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 86.0,
+      submitted_at: "2026-09-27"
+    },
+    {
+      id: 16,
+      challenge_id: 2,
+      challenge_title: "Automated School Attendance Verification",
+      department: "School Education Department",
+      startup_id: 16,
+      startup_name: "SetuCyber Shield",
+      dpiit_number: "DIPP38901",
+      status: "Eligible",
+      proposal_summary: "End-to-end cryptographic encryption layer securing student biometric hashes from edge nodes to cloud repository.",
+      proposed_budget: "₹22,00,000",
+      proposed_timeline: "60 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 80.5,
+      submitted_at: "2026-09-25"
+    },
+    {
+      id: 17,
+      challenge_id: 1,
+      challenge_title: "Smart Waste Collection & Route Optimization",
+      department: "Municipal Administration",
+      startup_id: 5,
+      startup_name: "PipeAI Innovations",
+      dpiit_number: "DIPP41108",
+      status: "Under Review",
+      proposal_summary: "Automated robotic crawler visual inspection of municipal stormwater drop inlets and trash choke points.",
+      proposed_budget: "₹18,00,000",
+      proposed_timeline: "60 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 76.0,
+      submitted_at: "2026-09-24"
+    },
+    {
+      id: 18,
+      challenge_id: 5,
+      challenge_title: "Automated Pothole Detection & Road Quality Mapping",
+      department: "Urban Development Department",
+      startup_id: 2,
+      startup_name: "EcoTrack",
+      dpiit_number: "DIPP54129",
+      status: "Eligible",
+      proposal_summary: "Integration of vibration logging and optical distress detection on municipal transit bus fleets.",
+      proposed_budget: "₹24,00,000",
+      proposed_timeline: "90 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 83.0,
+      submitted_at: "2026-09-25"
+    },
+    {
+      id: 19,
+      challenge_id: 10,
+      challenge_title: "Groundwater Aquifer Depletion & Quality Telemetry Mesh",
+      department: "Water Resources & Ground Water Authority",
+      startup_id: 1,
+      startup_name: "WaterSense",
+      dpiit_number: "DIPP78214",
+      status: "Eligible",
+      proposal_summary: "Subterranean acoustic pulse logging to monitor water table drawdown in critical drought blocks.",
+      proposed_budget: "₹33,00,000",
+      proposed_timeline: "90 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 87.0,
+      submitted_at: "2026-09-27"
+    },
+    {
+      id: 20,
+      challenge_id: 1,
+      challenge_title: "Smart Waste Collection & Route Optimization",
+      department: "Municipal Administration",
+      startup_id: 8,
+      startup_name: "MedDrishti Telemedicine",
+      dpiit_number: "DIPP77419",
+      status: "Eligible",
+      proposal_summary: "Sanitation worker wearable biometrics and route environmental exposure telemetry kit.",
+      proposed_budget: "₹27,50,000",
+      proposed_timeline: "75 Days",
+      checklist_dpiit: 1,
+      checklist_documents: 1,
+      checklist_technology: 1,
+      checklist_experience: 1,
+      checklist_compliance: 1,
+      evaluation_score: 84.5,
+      submitted_at: "2026-09-28"
     }
   ],
 
@@ -483,70 +861,112 @@ const SEED_DATA = {
     {
       id: 1,
       application_id: 1,
-      expert_name: "Dr. K. S. Sharma",
-      technical_score: 85,
-      innovation_score: 90,
-      feasibility_score: 82,
-      cost_score: 78,
-      team_score: 88,
-      total_score: 84.9,
-      comments: "WaterSense provides a validated acoustic edge detection algorithm with minimal false positive readings. Prototype is ready for municipal field pilot.",
+      expert_name: "Dr. M. S. Swaminathan (IIT Roorkee / CPWD Advisory)",
+      technical_score: 88,
+      innovation_score: 92,
+      feasibility_score: 86,
+      cost_score: 80,
+      team_score: 90,
+      total_score: 87.2,
+      comments: "WaterSense presents a mathematically rigorous acoustic waveform analysis method. Field sensor hardware is IP68 ruggedized and field-hardened.",
       decision: "Approved for Pilot",
       evaluated_at: "2026-09-25"
     },
     {
       id: 2,
       application_id: 3,
-      expert_name: "Prof. M. R. Nambiar",
+      expert_name: "Prof. Sunita Raman (IIIT Hyderabad / AI Mission)",
       technical_score: 88,
       innovation_score: 86,
       feasibility_score: 89,
       cost_score: 84,
       team_score: 90,
       total_score: 87.5,
-      comments: "EduVision edge TPU implementation satisfies STQC biometric standards. Highly viable for government school pilots.",
+      comments: "EduVision edge TPU implementation satisfies STQC biometric standards. Highly viable for 50 government school entrance gates.",
       decision: "Approved for Pilot",
       evaluated_at: "2026-09-26"
     },
     {
       id: 3,
       application_id: 6,
-      expert_name: "Dr. S. K. Mahapatra",
+      expert_name: "Dr. S. K. Mahapatra (ICAR Agricultural Engineering Institute)",
       technical_score: 90,
       innovation_score: 92,
       feasibility_score: 88,
       cost_score: 82,
       team_score: 92,
       total_score: 89.0,
-      comments: "KrishiSheet phase change thermal battery technology eliminates recurring diesel generator operating costs.",
+      comments: "KrishiSheet phase change thermal battery technology eliminates recurring diesel generator operating costs for remote farm clusters.",
       decision: "Approved for Pilot",
       evaluated_at: "2026-09-27"
     },
     {
       id: 4,
       application_id: 8,
-      expert_name: "Er. Alok Ranjan",
+      expert_name: "Er. Alok Ranjan (Forest Survey Directorate)",
       technical_score: 92,
       innovation_score: 94,
       feasibility_score: 90,
       cost_score: 88,
       team_score: 93,
       total_score: 91.5,
-      comments: "VanaDrishti dual optical-thermal payload delivers high accuracy early ember detection even in dense canopies.",
+      comments: "VanaDrishti dual optical-thermal payload delivers high accuracy early ember detection even in dense sal tree canopies.",
       decision: "Approved for Pilot",
       evaluated_at: "2026-09-28"
     },
     {
       id: 5,
+      application_id: 5,
+      expert_name: "Er. K. L. Narayanan (NIC Technical Director Retd.)",
+      technical_score: 85,
+      innovation_score: 84,
+      feasibility_score: 86,
+      cost_score: 80,
+      team_score: 82,
+      total_score: 83.4,
+      comments: "CivicPulse road roughness algorithm matches IRC (Indian Roads Congress) surface specification requirements.",
+      decision: "Approved for Pilot",
+      evaluated_at: "2026-09-26"
+    },
+    {
+      id: 6,
+      application_id: 7,
+      expert_name: "Dr. Aruna Sundaram (AIIMS / National Health Mission)",
+      technical_score: 88,
+      innovation_score: 86,
+      feasibility_score: 85,
+      cost_score: 84,
+      team_score: 88,
+      total_score: 86.2,
+      comments: "MedDrishti point-of-care backpack demonstrates excellent battery autonomy and offline telemetry for tribal health sub-centres.",
+      decision: "Approved for Pilot",
+      evaluated_at: "2026-09-27"
+    },
+    {
+      id: 7,
+      application_id: 12,
+      expert_name: "Dr. Ramesh Chandra (Central Ground Water Board)",
+      technical_score: 86,
+      innovation_score: 87,
+      feasibility_score: 86,
+      cost_score: 82,
+      team_score: 86,
+      total_score: 85.5,
+      comments: "BhuJal hydrostatic probes provide stable pressure calibration without sensor drift under deep borehole hydrostatic heads.",
+      decision: "Approved for Pilot",
+      evaluated_at: "2026-09-28"
+    },
+    {
+      id: 8,
       application_id: 2,
-      expert_name: "Dr. K. S. Sharma",
+      expert_name: "Er. S. K. Sharma (State Pollution Control Board)",
       technical_score: 82,
       innovation_score: 80,
       feasibility_score: 84,
       cost_score: 79,
       team_score: 81,
       total_score: 81.2,
-      comments: "Route optimization algorithm requires additional validation under peak traffic congestion parameters.",
+      comments: "Route optimization algorithm requires additional validation under heavy monsoon traffic congestion parameters.",
       decision: "Request Changes",
       evaluated_at: "2026-09-24"
     }
@@ -564,13 +984,13 @@ const SEED_DATA = {
       start_date: "2026-08-01",
       milestones_completed: 3,
       kpi_achieved: "94.2% accuracy",
-      milestone1_title: "Initial Sensor Mesh Deployment",
+      milestone1_title: "Initial Sensor Mesh Deployment (60 Nodes)",
       milestone1_status: "Completed",
-      milestone2_title: "Acoustic Frequency Calibration",
+      milestone2_title: "Acoustic Telemetry & Baseline Calibration",
       milestone2_status: "Completed",
-      milestone3_title: "Ground-Truth Leak Detection Testing",
+      milestone3_title: "Ground-Truth Leak Pinpoint Testing",
       milestone3_status: "Completed",
-      milestone4_title: "Third-Party Benchmark Validation",
+      milestone4_title: "Third-Party Benchmark Validation & Dossier",
       milestone4_status: "In Progress"
     },
     {
@@ -586,7 +1006,7 @@ const SEED_DATA = {
       kpi_achieved: "99.1% recognition",
       milestone1_title: "Edge TPU Hardware Installation (50 Schools)",
       milestone1_status: "Completed",
-      milestone2_title: "Student Enrollment & Verification Pilot",
+      milestone2_title: "Student Enrollment & Multi-Face Verification",
       milestone2_status: "Completed",
       milestone3_title: "Attendance Database Stress Testing",
       milestone3_status: "In Progress",
@@ -608,7 +1028,7 @@ const SEED_DATA = {
       milestone1_status: "Completed",
       milestone2_title: "Solar Rooftop & PCM Charging Integration",
       milestone2_status: "Completed",
-      milestone3_title: "Tomato Produce Spoilage & Temperature Logging",
+      milestone3_title: "Produce Spoilage & Temperature Logging",
       milestone3_status: "Completed",
       milestone4_title: "ICAR Agricultural Audit & Certification",
       milestone4_status: "In Progress"
@@ -632,6 +1052,46 @@ const SEED_DATA = {
       milestone3_status: "Completed",
       milestone4_title: "Forest Survey Directorate Sign-Off",
       milestone4_status: "Completed"
+    },
+    {
+      id: 5,
+      challenge_id: 4,
+      challenge_title: "Real-Time Industrial Effluent Monitoring",
+      department: "Pollution Control Board",
+      startup_id: 6,
+      startup_name: "CivicPulse Insights",
+      status: "Completed",
+      start_date: "2026-05-15",
+      milestones_completed: 4,
+      kpi_achieved: "93.5% auto-classification",
+      milestone1_title: "Drainage Gate Sensor Fixturing",
+      milestone1_status: "Completed",
+      milestone2_title: "BOD/COD Spectrometry Telemetry Setup",
+      milestone2_status: "Completed",
+      milestone3_title: "Automated Pollution Alert Dispatch",
+      milestone3_status: "Completed",
+      milestone4_title: "Independent Third-Party CPCB Audit",
+      milestone4_status: "Completed"
+    },
+    {
+      id: 6,
+      challenge_id: 5,
+      challenge_title: "Automated Pothole Detection & Road Quality Mapping",
+      department: "Urban Development Department",
+      startup_id: 7,
+      startup_name: "GreenWatts Grid",
+      status: "Completed",
+      start_date: "2026-01-10",
+      milestones_completed: 4,
+      kpi_achieved: "18.6% tariff savings",
+      milestone1_title: "Substation SCADA Interfacing",
+      milestone1_status: "Completed",
+      milestone2_title: "Peak Tariff Dispatch Testing",
+      milestone2_status: "Completed",
+      milestone3_title: "Battery Life Optimization Audit",
+      milestone3_status: "Completed",
+      milestone4_title: "State Regulatory Commission Clearance",
+      milestone4_status: "Completed"
     }
   ],
 
@@ -646,7 +1106,7 @@ const SEED_DATA = {
       validation_status: "Validated",
       testing_agency: "National Water Academy & CPWD",
       expert_comments: "Ground truth testing confirmed acoustic alert accuracy exceeded the 90% tender specification.",
-      govt_feedback: "Verified by Executive Engineer field team. Recommended for commercial procurement."
+      govt_feedback: "Verified by Executive Engineer field team. Recommended for commercial procurement under GFR 149."
     },
     {
       id: 2,
@@ -683,6 +1143,30 @@ const SEED_DATA = {
       testing_agency: "Forest Survey Directorate & Remote Sensing Center",
       expert_comments: "Thermal infrared sensors pinpointed test campfires under thick sal tree canopies within 12 minutes.",
       govt_feedback: "Chief Conservator of Forests issued technical validation clearance."
+    },
+    {
+      id: 5,
+      pilot_id: 5,
+      startup_name: "CivicPulse Insights",
+      challenge_title: "Real-Time Industrial Effluent Monitoring",
+      accuracy_kpi: "93.5% Auto-Detection",
+      response_kpi: "45 min routing time",
+      validation_status: "Validated",
+      testing_agency: "Centre for Good Governance & CPCB",
+      expert_comments: "Continuous spectrometry telemetry identified 100% of simulated toxic chemical discharge surges.",
+      govt_feedback: "Pollution Control Board issued compliance certification."
+    },
+    {
+      id: 6,
+      pilot_id: 6,
+      startup_name: "GreenWatts Grid",
+      challenge_title: "Automated Pothole Detection & Road Quality Mapping",
+      accuracy_kpi: "18.6% Bill Reduction",
+      response_kpi: "82.4% Captive Solar",
+      validation_status: "Validated",
+      testing_agency: "National Institute of Solar Energy",
+      expert_comments: "Verified by State Energy Regulatory Commission meters over 180 continuous operating days.",
+      govt_feedback: "Significant tariff reduction achieved on commercial grid power draw."
     }
   ],
 
@@ -694,23 +1178,34 @@ const SEED_DATA = {
       challenge_title: "AI-Based Water Leakage Detection",
       department: "Public Works Department",
       pilot_result: "94.2% KPI Achievement",
-      evaluation_score: 84.9,
-      decision: "Approved",
+      evaluation_score: 87.2,
+      decision: "Under Procurement Review",
       decision_notes: "Pilot performance validated by National Water Academy. Direct procurement approved under GFR Rule 149 relaxation."
     },
     {
       id: 2,
-      pilot_id: 2,
-      startup_name: "EduVision",
-      challenge_title: "Automated School Attendance Verification",
-      department: "School Education Department",
-      pilot_result: "99.1% Recognition Rate",
-      evaluation_score: 87.5,
+      pilot_id: 5,
+      startup_name: "CivicPulse Insights",
+      challenge_title: "Real-Time Industrial Effluent Monitoring",
+      department: "Pollution Control Board",
+      pilot_result: "93.5% KPI Achievement",
+      evaluation_score: 88.6,
       decision: "Approved",
-      decision_notes: "STQC certification submitted. Direct commercial purchase sanctioned for 150 government secondary schools."
+      decision_notes: "Approved under Special Public Procurement Framework for Startups. Annual state license contract executed."
     },
     {
       id: 3,
+      pilot_id: 4,
+      startup_name: "VanaDrishti Drones",
+      challenge_title: "Autonomous Drone Surveillance for Forest Fire Early Warning",
+      department: "Department of Environment & Forests",
+      pilot_result: "12 min Alert Response (All KPIs Exceeded)",
+      evaluation_score: 91.5,
+      decision: "Approved",
+      decision_notes: "Procurement sanctioned for state wildlife division under special disaster management innovation provisions."
+    },
+    {
+      id: 4,
       pilot_id: 3,
       startup_name: "KrishiSheet ColdTech",
       challenge_title: "Decentralized Solar Cold Storage for Perishable Crops",
@@ -719,6 +1214,17 @@ const SEED_DATA = {
       evaluation_score: 89.0,
       decision: "Approved",
       decision_notes: "ICAR audit passed. Sanctioned for procurement under State Horticulture Development Mission."
+    },
+    {
+      id: 5,
+      pilot_id: 2,
+      startup_name: "EduVision",
+      challenge_title: "Automated School Attendance Verification",
+      department: "School Education Department",
+      pilot_result: "99.1% Recognition Rate",
+      evaluation_score: 87.5,
+      decision: "Under Procurement Review",
+      decision_notes: "STQC certification submitted. Direct commercial purchase pending Competent Authority sign-off."
     }
   ],
 
@@ -731,17 +1237,17 @@ const SEED_DATA = {
       scale_departments: 5,
       scale_districts: 20,
       total_deployments: 25,
-      status: "SOLUTION SCALED"
+      status: "READY FOR SCALE-UP"
     },
     {
       id: 2,
-      startup_name: "EduVision",
-      solution_name: "Automated School Attendance Verification",
-      department: "School Education Department",
-      scale_departments: 3,
-      scale_districts: 12,
-      total_deployments: 150,
-      status: "READY FOR SCALE-UP"
+      startup_name: "CivicPulse Insights",
+      solution_name: "Real-Time Industrial Effluent Monitoring",
+      department: "Pollution Control Board",
+      scale_departments: 5,
+      scale_districts: 20,
+      total_deployments: 25,
+      status: "SOLUTION SCALED"
     },
     {
       id: 3,
@@ -751,6 +1257,26 @@ const SEED_DATA = {
       scale_departments: 2,
       scale_districts: 8,
       total_deployments: 16,
+      status: "SOLUTION SCALED"
+    },
+    {
+      id: 4,
+      startup_name: "KrishiSheet ColdTech",
+      solution_name: "Decentralized Thermal Battery Solar Cold Storage",
+      department: "Department of Agriculture & Farmers Welfare",
+      scale_departments: 3,
+      scale_districts: 14,
+      total_deployments: 32,
+      status: "READY FOR SCALE-UP"
+    },
+    {
+      id: 5,
+      startup_name: "EduVision",
+      solution_name: "Automated School Attendance Verification",
+      department: "School Education Department",
+      scale_departments: 3,
+      scale_districts: 12,
+      total_deployments: 150,
       status: "READY FOR SCALE-UP"
     }
   ],
@@ -765,7 +1291,11 @@ const SEED_DATA = {
     { id: 7, title: "STQC Biometric Security Certification — EduVision", category: "Validation Report", file_name: "STQC-EDUV-2026.pdf", file_size: "2.9 MB", upload_date: "2026-09-26", status: "Certified" },
     { id: 8, title: "ICAR Agricultural Cold Chain Benchmark Validation Report", category: "Validation Report", file_name: "ICAR-KRISHI-0926.pdf", file_size: "3.4 MB", upload_date: "2026-09-27", status: "Certified" },
     { id: 9, title: "DGCA UAS Type Approval Certificate — VanaDrishti", category: "Startup Registration", file_name: "DGCA-UAS-VANA-2026.pdf", file_size: "1.8 MB", upload_date: "2026-07-15", status: "Verified" },
-    { id: 10, title: "Multi-District Scale-Up Deployment Sanction Order", category: "Procurement Decision", file_name: "Scale-Sanction-Order-2026.pdf", file_size: "1.3 MB", upload_date: "2026-09-28", status: "Sanctioned" }
+    { id: 10, title: "Multi-District Scale-Up Deployment Sanction Order", category: "Procurement Decision", file_name: "Scale-Sanction-Order-2026.pdf", file_size: "1.3 MB", upload_date: "2026-09-28", status: "Sanctioned" },
+    { id: 11, title: "Municipal Solid Waste RFP Specifications", category: "Problem Statement", file_name: "MUNICIPAL-SWM-2026.pdf", file_size: "2.2 MB", upload_date: "2026-09-18", status: "Active" },
+    { id: 12, title: "DPDP Act 2023 Data Privacy Audit Certificate — CivicPulse", category: "Validation Report", file_name: "DPDP-AUDIT-CIVIC.pdf", file_size: "940 KB", upload_date: "2026-08-20", status: "Certified" },
+    { id: 13, title: "Central Ground Water Board Sensor Calibration Report", category: "Validation Report", file_name: "CGWB-BHUJAL-0926.pdf", file_size: "1.6 MB", upload_date: "2026-09-28", status: "Verified" },
+    { id: 14, title: "Tripartite Scale-Up Agreement (State Mission + Startup + Discom)", category: "Pilot Agreement", file_name: "TRIPARTITE-SCALE-2026.pdf", file_size: "2.8 MB", upload_date: "2026-09-28", status: "Signed" }
   ],
 
   notifications: [
@@ -774,7 +1304,17 @@ const SEED_DATA = {
     { id: 3, title: "Procurement Sanction Ready", message: "National Water Academy audit report received. Sanction order ready.", is_read: 0 },
     { id: 4, title: "New Candidate Proposal", message: "KrishiSheet ColdTech applied for Decentralized Solar Cold Storage.", is_read: 0 },
     { id: 5, title: "Evaluation Required", message: "VanaDrishti Drones proposal submitted for Forest Fire Early Warning.", is_read: 0 },
-    { id: 6, title: "Scale-Up Authorization Completed", message: "Statewide expansion authorized for WaterSense across 5 departments.", is_read: 1 }
+    { id: 6, title: "Scale-Up Authorization Completed", message: "Statewide expansion authorized for WaterSense across 5 departments.", is_read: 1 },
+    { id: 7, title: "Disbursal Released", message: "Milestone 2 payment of ₹75,000 processed via PFMS for EduVision.", is_read: 0 },
+    { id: 8, title: "New Challenge Published", message: "Traffic Police published 'Smart Urban Traffic Adaptive Signal Control'.", is_read: 0 }
+  ],
+
+  audit_logs: [
+    { id: 1, action: "GFR 2017 Rule 149 Exemption Verified", entity: "Public Works Department", user: "R. K. Sharma (Procurement Officer)", timestamp: "2026-09-28 14:32:00" },
+    { id: 2, action: "Milestone Disbursal Approved ₹1,00,000", entity: "PFMS Payment Gateway", user: "Finance Division", timestamp: "2026-09-28 11:15:00" },
+    { id: 3, action: "Third-Party Benchmark Certified (94.2% accuracy)", entity: "National Water Academy", user: "Dr. M. S. Swaminathan", timestamp: "2026-09-27 16:45:00" },
+    { id: 4, action: "DPIIT Statutory Verification Passed (DIPP78214)", entity: "Startup India Portal API", user: "System Automator", timestamp: "2026-09-27 10:20:00" },
+    { id: 5, action: "Role Switched to State Procurement Authority", entity: "Session Controller", user: "Administrative User", timestamp: "2026-09-26 09:00:00" }
   ]
 };
 
@@ -784,8 +1324,8 @@ function getLocalStore() {
   if (stored) {
     try {
       const parsed = JSON.parse(stored);
-      // If store is older schema with fewer items, refresh with richer seed
-      if (parsed.challenges && parsed.challenges.length >= 8) {
+      // If store is older schema with fewer than 20 applications, refresh with richer seed
+      if (parsed.version === 3 && parsed.applications && parsed.applications.length >= 20) {
         return parsed;
       }
     } catch (e) {
@@ -832,6 +1372,28 @@ window.fetch = async function (resource, options = {}) {
       });
     };
 
+    // 0. Overview
+    if (pathname === '/api/overview') {
+      return mockResponse({
+        cards: {
+          activeChallenges: store.challenges.length,
+          applicationsReceived: store.applications.length,
+          pilotsRunning: store.pilots.filter(p => p.status === 'In Progress').length,
+          pendingEvaluations: store.evaluations.length,
+          procurementDecisions: store.procurement.filter(p => p.decision === 'Approved').length,
+          solutionsScaled: store.scale.filter(s => s.status === 'SOLUTION SCALED').length
+        },
+        pipeline: [
+          { stage: 'Startup Discovery', count: store.challenges.filter(c => c.status === 'Open').length },
+          { stage: 'Expert Evaluation', count: store.challenges.filter(c => c.status === 'Evaluation').length },
+          { stage: 'Controlled Field Pilot', count: store.challenges.filter(c => c.status === 'Pilot').length },
+          { stage: 'Performance Validation', count: store.performance.length },
+          { stage: 'Procurement Sanction', count: store.procurement.length },
+          { stage: 'Statewide Scale-Up', count: store.scale.length }
+        ]
+      });
+    }
+
     // 1. Challenges
     if (pathname === '/api/challenges') {
       if (method === 'GET') {
@@ -854,7 +1416,18 @@ window.fetch = async function (resource, options = {}) {
 
     // 2. Startups
     if (pathname === '/api/startups') {
-      return mockResponse(store.startups);
+      const challengeId = parsedUrl.searchParams.get('challengeId');
+      const search = parsedUrl.searchParams.get('search');
+      let list = [...store.startups];
+
+      if (challengeId) {
+        list.sort((a, b) => b.matchScore - a.matchScore);
+      }
+      if (search) {
+        const q = search.toLowerCase();
+        list = list.filter(s => s.name.toLowerCase().includes(q) || s.solution.toLowerCase().includes(q));
+      }
+      return mockResponse(list);
     }
 
     // 3. Applications
@@ -875,7 +1448,7 @@ window.fetch = async function (resource, options = {}) {
           startup_name: st.name,
           dpiit_number: st.dpiit_number,
           status: 'Eligible',
-          proposal_summary: body.proposal_summary,
+          proposal_summary: body.proposal_summary || "Automated innovation proposal submission.",
           proposed_budget: body.proposed_budget || '₹35,00,000',
           proposed_timeline: body.proposed_timeline || '90 Days',
           checklist_dpiit: 1,
@@ -940,7 +1513,7 @@ window.fetch = async function (resource, options = {}) {
       if (pilot) {
         pilot[`milestone${body.milestoneNumber}_status`] = body.status;
         saveLocalStore(store);
-        return mockResponse({ success: true });
+        return mockResponse({ success: true, status: body.status });
       }
     }
 
@@ -950,7 +1523,13 @@ window.fetch = async function (resource, options = {}) {
     }
 
     if (pathname.startsWith('/api/performance/') && pathname.endsWith('/validate')) {
-      return mockResponse({ success: true, validationStatus: 'Validated' });
+      const pilotId = parseInt(pathname.split('/')[3]);
+      const perf = store.performance.find(p => p.pilot_id === pilotId) || store.performance[0];
+      if (perf) {
+        perf.validation_status = 'Validated';
+        saveLocalStore(store);
+      }
+      return mockResponse({ success: true, validationStatus: 'Pilot Successfully Validated' });
     }
 
     // 7. Procurement
@@ -959,11 +1538,15 @@ window.fetch = async function (resource, options = {}) {
     }
 
     if (pathname.startsWith('/api/procurement/') && pathname.endsWith('/decision')) {
+      const procId = parseInt(pathname.split('/')[3]);
       const body = JSON.parse(options.body || '{}');
-      const doc = store.procurement[0];
-      if (doc) doc.decision = body.action === 'Proceed to Procurement' ? 'Approved' : body.action;
-      saveLocalStore(store);
-      return mockResponse({ success: true });
+      const doc = store.procurement.find(p => p.id === procId) || store.procurement[0];
+      if (doc) {
+        doc.decision = body.action === 'Proceed to Procurement' ? 'PROCUREMENT APPROVED' : body.action;
+        doc.decision_notes = body.notes || doc.decision_notes;
+        saveLocalStore(store);
+      }
+      return mockResponse({ success: true, status: 'PROCUREMENT APPROVED' });
     }
 
     // 8. Scale
@@ -972,13 +1555,15 @@ window.fetch = async function (resource, options = {}) {
     }
 
     if (pathname.startsWith('/api/scale/')) {
+      const scaleId = parseInt(pathname.split('/')[3]);
       const body = JSON.parse(options.body || '{}');
-      if (store.scale[0]) {
-        store.scale[0].status = 'SOLUTION SCALED';
-        Object.assign(store.scale[0], body);
+      const item = store.scale.find(s => s.id === scaleId) || store.scale[0];
+      if (item) {
+        item.status = 'SOLUTION SCALED';
+        Object.assign(item, body);
         saveLocalStore(store);
       }
-      return mockResponse(store.scale[0] || { status: 'SOLUTION SCALED' });
+      return mockResponse(item || { status: 'SOLUTION SCALED' });
     }
 
     // 9. Documents
@@ -991,15 +1576,37 @@ window.fetch = async function (resource, options = {}) {
       return mockResponse(store.notifications);
     }
 
-    // 11. Search
+    // 11. Payments
+    if (pathname === '/api/payments') {
+      return mockResponse({
+        summary: {
+          totalContractValue: 620000,
+          paidAmount: 620000,
+          pendingAmount: 0
+        },
+        payments: [
+          { id: 1, pilot_id: 1, milestone_number: 1, title: "Hardware Deployment", amount: 50000, status: "Paid", paid_date: "2026-06-15", transaction_ref: "PFMS-TXN-2026-8812" },
+          { id: 2, pilot_id: 1, milestone_number: 2, title: "Baseline Acoustic Testing", amount: 75000, status: "Paid", paid_date: "2026-07-20", transaction_ref: "PFMS-TXN-2026-9430" },
+          { id: 3, pilot_id: 1, milestone_number: 3, title: "Performance Validation", amount: 100000, status: "Paid", paid_date: "2026-08-30", transaction_ref: "PFMS-TXN-2026-9901" }
+        ]
+      });
+    }
+
+    // 12. Search
     if (pathname === '/api/search') {
       const q = (parsedUrl.searchParams.get('q') || '').toLowerCase();
       const filteredCh = store.challenges.filter(c => c.title.toLowerCase().includes(q) || c.department.toLowerCase().includes(q));
       const filteredSt = store.startups.filter(s => s.name.toLowerCase().includes(q) || s.solution.toLowerCase().includes(q));
-      return mockResponse({ challenges: filteredCh, startups: filteredSt, pilots: [] });
+      const filteredPilots = store.pilots.filter(p => p.challenge_title.toLowerCase().includes(q) || p.startup_name.toLowerCase().includes(q));
+      return mockResponse({ challenges: filteredCh, startups: filteredSt, pilots: filteredPilots });
     }
 
-    // 12. Reset
+    // 13. Audit logs
+    if (pathname === '/api/audit-logs') {
+      return mockResponse(store.audit_logs || []);
+    }
+
+    // 14. Reset
     if (pathname === '/api/reset') {
       localStorage.removeItem('procure_portal_data');
       return mockResponse({ success: true, message: "Reset to initial state." });

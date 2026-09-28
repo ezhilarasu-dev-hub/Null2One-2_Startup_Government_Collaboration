@@ -1,23 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { ArrowRight, Plus } from 'lucide-react';
+import { ArrowRight, Plus, Target, FileCheck, FlaskConical, TrendingUp } from 'lucide-react';
 
 export default function HomeView({ onOpenCreateChallenge }) {
   const { currentRole, setActiveTab, setSelectedChallengeId } = useApp();
   const [challenges, setChallenges] = useState([]);
+  const [overviewStats, setOverviewStats] = useState({
+    activeChallenges: 10,
+    applicationsReceived: 20,
+    pilotsRunning: 3,
+    solutionsScaled: 5
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/challenges')
-      .then(res => res.json())
-      .then(data => {
-        setChallenges(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setLoading(false);
-      });
+    Promise.all([
+      fetch('/api/challenges').then(res => res.json()).catch(() => []),
+      fetch('/api/overview').then(res => res.json()).catch(() => null)
+    ]).then(([chalData, ovData]) => {
+      if (Array.isArray(chalData)) setChallenges(chalData);
+      if (ovData && ovData.cards) {
+        setOverviewStats({
+          activeChallenges: ovData.cards.activeChallenges || 10,
+          applicationsReceived: ovData.cards.applicationsReceived || 20,
+          pilotsRunning: ovData.cards.pilotsRunning || 3,
+          solutionsScaled: ovData.cards.solutionsScaled || 5
+        });
+      }
+      setLoading(false);
+    });
   }, []);
 
   const getStatusBadge = (status) => {
@@ -40,42 +51,93 @@ export default function HomeView({ onOpenCreateChallenge }) {
   const recentActivities = [
     {
       startup: 'WaterSense',
-      challenge: 'Water Leakage Detection',
-      stage: 'Pilot completed',
+      challenge: 'AI-Based Water Leakage Detection',
+      stage: 'Ground-truth pilot benchmark verified (94.2%)',
       time: '2 hours ago'
     },
     {
-      startup: 'EcoTrack',
-      challenge: 'Municipal Solid Waste Monitoring',
-      stage: 'New application received',
+      startup: 'EduVision',
+      challenge: 'Automated School Attendance Verification',
+      stage: 'STQC DPDP compliance clearance issued',
       time: 'Yesterday'
     },
     {
-      startup: 'CivicLens',
-      challenge: 'Automated Pothole Detection',
-      stage: 'Evaluation submitted',
+      startup: 'KrishiSheet ColdTech',
+      challenge: 'Decentralized Solar Cold Storage for Perishable Crops',
+      stage: 'Proposal approved for 5MT farm pilot',
+      time: '2 days ago'
+    },
+    {
+      startup: 'VanaDrishti Drones',
+      challenge: 'Autonomous Forest Fire Early Warning',
+      stage: 'Commercial procurement sanctioned (GFR 149)',
       time: '3 days ago'
     },
     {
-      startup: 'AquaTech',
-      challenge: 'Industrial Effluent Monitoring',
-      stage: 'Challenge published',
+      startup: 'CivicPulse Insights',
+      challenge: 'Real-Time Industrial Effluent Monitoring',
+      stage: 'Solution scaled across 5 departments',
       time: '4 days ago'
+    },
+    {
+      startup: 'BhuJal Analytics',
+      challenge: 'Groundwater Aquifer Depletion Telemetry',
+      stage: 'Expert evaluation completed (85.5/100)',
+      time: '5 days ago'
     }
   ];
 
   return (
     <div className="page-container">
       {/* Greeting Header */}
-      <div style={{ marginBottom: '28px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h1 className="page-title">{currentRole.greeting}</h1>
         <p className="page-desc">
-          You have {currentRole.pendingTasks?.length || 3} items that need your attention.
+          Official prototype dashboard for public procurement of innovation. You have {currentRole.pendingTasks?.length || 3} items requiring administrative attention.
         </p>
       </div>
 
+      {/* Program High-Level Stat Counters */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '14px', marginBottom: '28px' }}>
+        <div className="card" style={{ padding: '16px 20px', cursor: 'pointer' }} onClick={() => setActiveTab('challenges')}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+            <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Active Challenges</span>
+            <Target size={16} color="#0284C7" />
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A' }}>{overviewStats.activeChallenges}</div>
+          <div style={{ fontSize: '0.74rem', color: '#16A34A', marginTop: '4px' }}>Across 8 Ministries</div>
+        </div>
+
+        <div className="card" style={{ padding: '16px 20px', cursor: 'pointer' }} onClick={() => setActiveTab('applications')}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+            <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Proposals Received</span>
+            <FileCheck size={16} color="#2563EB" />
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A' }}>{overviewStats.applicationsReceived}</div>
+          <div style={{ fontSize: '0.74rem', color: '#0284C7', marginTop: '4px' }}>DPIIT Startups Screened</div>
+        </div>
+
+        <div className="card" style={{ padding: '16px 20px', cursor: 'pointer' }} onClick={() => setActiveTab('pilots')}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+            <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Controlled Pilots</span>
+            <FlaskConical size={16} color="#D97706" />
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A' }}>6</div>
+          <div style={{ fontSize: '0.74rem', color: '#D97706', marginTop: '4px' }}>3 Active, 3 Validated</div>
+        </div>
+
+        <div className="card" style={{ padding: '16px 20px', cursor: 'pointer' }} onClick={() => setActiveTab('scale')}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+            <span style={{ fontSize: '0.78rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Scaled Solutions</span>
+            <TrendingUp size={16} color="#16A34A" />
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A' }}>{overviewStats.solutionsScaled}</div>
+          <div style={{ fontSize: '0.74rem', color: '#16A34A', marginTop: '4px' }}>Statewide Deployments</div>
+        </div>
+      </div>
+
       {/* Action Required Items */}
-      <div style={{ marginBottom: '36px' }}>
+      <div style={{ marginBottom: '32px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {currentRole.pendingTasks?.map((task, idx) => (
             <div key={task.id || idx} className="action-required-card">
@@ -101,9 +163,9 @@ export default function HomeView({ onOpenCreateChallenge }) {
       </div>
 
       {/* Recent Activity */}
-      <div style={{ marginBottom: '36px' }}>
+      <div style={{ marginBottom: '32px' }}>
         <h2 style={{ fontSize: '1rem', fontWeight: 600, color: '#0F172A', marginBottom: '12px' }}>
-          Recent activity
+          Recent activity & procurement milestones
         </h2>
 
         <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '6px', padding: '4px 18px' }}>
@@ -126,9 +188,12 @@ export default function HomeView({ onOpenCreateChallenge }) {
       {/* Current Activity Table */}
       <div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-          <h2 style={{ fontSize: '1rem', fontWeight: 600, color: '#0F172A' }}>
-            Current activity
-          </h2>
+          <div>
+            <h2 style={{ fontSize: '1rem', fontWeight: 600, color: '#0F172A' }}>
+              Active innovation challenges pipeline
+            </h2>
+            <div style={{ fontSize: '0.78rem', color: '#64748B' }}>Showing {challenges.length} challenges published across participating government departments</div>
+          </div>
 
           <button
             className="btn btn-primary btn-sm"
@@ -160,7 +225,10 @@ export default function HomeView({ onOpenCreateChallenge }) {
                       <div style={{ fontSize: '0.74rem', color: '#64748B' }}>{c.required_technology}</div>
                     </td>
                     <td>{c.department}</td>
-                    <td>{c.applications_count}</td>
+                    <td>
+                      <span style={{ fontWeight: 600, color: '#0F172A' }}>{c.applications_count}</span>
+                      <span style={{ fontSize: '0.74rem', color: '#64748B', marginLeft: '4px' }}>proposals</span>
+                    </td>
                     <td>{c.stage}</td>
                     <td>{getStatusBadge(c.status)}</td>
                     <td style={{ textAlign: 'right' }}>

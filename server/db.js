@@ -408,6 +408,40 @@ export function seedData(db) {
         "Startup Discovery",
         1
       );
+
+      insertChallenge.run(
+        9,
+        "Smart Urban Traffic Adaptive Signal Control",
+        "Traffic Police & Transport Department",
+        "AI-driven visual queue length calculation and dynamic green light duration adjustment at 24 busy metropolitan intersections.",
+        "Reduce peak hour vehicular congestion delay by 25% and prioritize emergency corridor transits.",
+        "Computer Vision, Edge Inference, Traffic Controller API",
+        "₹30,00,000 - ₹48,00,000",
+        "3 Months",
+        "DPIIT recognized, proven intersection control hardware telemetry",
+        "20% reduction in vehicle wait idling, zero controller desync incidents",
+        "2026-12-20",
+        "Open",
+        "Startup Discovery",
+        1
+      );
+
+      insertChallenge.run(
+        10,
+        "Groundwater Aquifer Depletion & Quality Telemetry Mesh",
+        "Water Resources & Ground Water Authority",
+        "Deep borewell hydro-acoustic probes continuously tracking subterranean water table drops and salinity ingress in over-exploited blocks.",
+        "Digital dashboard warning of critical dry zones and contamination ingress before seasonal pump failure.",
+        "Hydrostatic Level Sensors, Sub-GHz Mesh Telemetry, Cloud Analytics",
+        "₹26,00,000 - ₹42,00,000",
+        "4 Months",
+        "DPIIT recognized, CGWB calibrated sensor instrumentation",
+        "99% transmission reliability through subsurface depths up to 250m",
+        "2026-12-25",
+        "Evaluation",
+        "Expert Evaluation",
+        2
+      );
       insertChallenge.finalize();
 
       // 2. Startups (8 startups)
@@ -588,6 +622,108 @@ export function seedData(db) {
         1,
         "DPIIT Certificate, DGCA UAS Type Approval Certificate, ISO 9001:2015"
       );
+
+      insertStartup.run(
+        11,
+        "GatiMarg AI",
+        "Siddharth Sen & Bhavna Patel",
+        "Adaptive Traffic Queue Signal Controller",
+        "Urban Mobility & Smart Cities",
+        "Computer Vision / Edge ML / ITS Controller",
+        3,
+        1,
+        "DIPP55819",
+        12,
+        "GatiMarg AI installs edge vision sensors on intersection gantry poles to dynamically regulate green signal cycles according to real-time traffic volume.",
+        "Thane Traffic Police 10-junction pilot, Ahmedabad BRTS corridor trial.",
+        1,
+        "DPIIT Certificate, STQC Sensor Testing Certificate"
+      );
+
+      insertStartup.run(
+        12,
+        "BhuJal Analytics",
+        "Naveen Reddy & Archana Das",
+        "Subterranean Groundwater Table Probe Telemetry",
+        "Water Resources",
+        "Hydrostatic Probes / Sub-GHz Mesh / Cloud GIS",
+        4,
+        1,
+        "DIPP66103",
+        15,
+        "BhuJal Analytics deploys ruggedized deep borehole sensors that deliver hourly groundwater level and salinity trends via long-range mesh radio.",
+        "Telangana Mission Bhagiratha recharge aquifer trial, CGWB Anantapur block pilot.",
+        1,
+        "DPIIT Certificate, CGWB Calibration Certification, ISO 9001:2015"
+      );
+
+      insertStartup.run(
+        13,
+        "SwachhVayu Systems",
+        "Manish Agarwal & Sonia Bose",
+        "Low-Power Ambient PM2.5 Micro-Scrubbers",
+        "Environmental Tech",
+        "Electrostatic Precipitators / IoT Air Telemetry",
+        2,
+        1,
+        "DIPP71904",
+        10,
+        "SwachhVayu deploys low-drag electrostatic air filtration nodes on street light poles to scrub particulate matter in urban hotspots.",
+        "Kanpur industrial belt air quality mitigation trial.",
+        1,
+        "DPIIT Certificate, CPCB Field Trial Certificate"
+      );
+
+      insertStartup.run(
+        14,
+        "NetraSuraksha AI",
+        "Arun Pandian & Deepa Nair",
+        "Privacy-Preserving Edge Video Surveillance",
+        "Public Safety & AI",
+        "Edge TPU / Computer Vision / Anomaly Detection",
+        3,
+        1,
+        "DIPP83210",
+        14,
+        "NetraSuraksha builds edge-processed video analytics for crowd management, perimeter breaches, and child safety in public infrastructure.",
+        "Tirupati Pilgrim Queue Management System, Chennai Metro rail trial.",
+        1,
+        "DPIIT Certificate, DPDP Compliance Audit"
+      );
+
+      insertStartup.run(
+        15,
+        "KisanDoot BioTech",
+        "Gopal Krishna & Shweta Joshi",
+        "Spectroscopic Soil Nutrient & Nitrate Probes",
+        "Agriculture Technology",
+        "NIR Spectrometry / IoT / Agronomic AI",
+        3,
+        1,
+        "DIPP94012",
+        11,
+        "KisanDoot manufactures portable handheld soil spectroscopy devices providing instant NPK and moisture readouts in 90 seconds without chemical reagents.",
+        "Vidarbha cotton belt soil health card digitization trial.",
+        1,
+        "DPIIT Certificate, ICAR Evaluation Report"
+      );
+
+      insertStartup.run(
+        16,
+        "SetuCyber Shield",
+        "Aditya Singhal & Rashi Gupta",
+        "Government e-Portal Zero-Trust Vulnerability Sensor",
+        "Cybersecurity & GovTech",
+        "Zero-Trust Architecture / Threat Intel / WAF",
+        4,
+        1,
+        "DIPP38901",
+        17,
+        "SetuCyber provides automated vulnerability scanners and real-time behavioral DDoS mitigation specialized for state portal architectures.",
+        "Haryana State Data Centre compliance audit, CERT-In advisory integration.",
+        1,
+        "DPIIT Certificate, CERT-In Empanelled Auditor Report, ISO 27001"
+      );
       insertStartup.finalize();
 
       // 3. Applications (8 applications)
@@ -718,6 +854,126 @@ export function seedData(db) {
         "90 Days",
         1, 1, 1, 1, 1
       );
+
+      // Challenge 9 (Traffic Signal) -> Startup 11 (GatiMarg)
+      insertApp.run(
+        11,
+        9,
+        11,
+        "Approved",
+        "Computer vision intersection edge units delivering dynamic green split adjustments across 24 critical junctions.",
+        "₹36,00,000",
+        "90 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 10 (Groundwater Telemetry) -> Startup 12 (BhuJal)
+      insertApp.run(
+        12,
+        10,
+        12,
+        "Approved",
+        "Mesh-connected digital piezometers and conductivity probes deployed across 30 state monitoring borewells.",
+        "₹29,50,000",
+        "90 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 4 (Effluent Monitoring) -> Startup 13 (SwachhVayu)
+      insertApp.run(
+        13,
+        4,
+        13,
+        "In Review",
+        "Integration of optical spectrometry probes at factory outlet canals with tamper-proof automated alerts.",
+        "₹26,00,000",
+        "60 Days",
+        1, 1, 1, 0, 1
+      );
+
+      // Challenge 2 (School Attendance) -> Startup 14 (NetraSuraksha)
+      insertApp.run(
+        14,
+        2,
+        14,
+        "In Review",
+        "Dual camera doorway units with privacy blurring and localized edge face feature matching.",
+        "₹31,00,000",
+        "90 Days",
+        1, 1, 1, 1, 0
+      );
+
+      // Challenge 6 (Solar Cold Storage) -> Startup 15 (KisanDoot)
+      insertApp.run(
+        15,
+        6,
+        15,
+        "Approved",
+        "Cold storage temperature and atmospheric nitrogen balance logging system with farmer mobile alerts.",
+        "₹38,00,000",
+        "120 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 2 (School Attendance) -> Startup 16 (SetuCyber)
+      insertApp.run(
+        16,
+        2,
+        16,
+        "Approved",
+        "End-to-end cryptographic encryption layer securing student biometric hashes from edge nodes to cloud repository.",
+        "₹22,00,000",
+        "60 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 1 (Smart Waste) -> Startup 5 (PipeAI)
+      insertApp.run(
+        17,
+        1,
+        5,
+        "In Review",
+        "Automated robotic crawler visual inspection of municipal stormwater drop inlets and trash choke points.",
+        "₹18,00,000",
+        "60 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 5 (Pothole Detection) -> Startup 2 (EcoTrack)
+      insertApp.run(
+        18,
+        5,
+        2,
+        "Approved",
+        "Integration of vibration logging and optical distress detection on municipal transit bus fleets.",
+        "₹24,00,000",
+        "90 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 10 (Groundwater Telemetry) -> Startup 1 (WaterSense)
+      insertApp.run(
+        19,
+        10,
+        1,
+        "Approved",
+        "Subterranean acoustic pulse logging to monitor water table drawdown in critical drought blocks.",
+        "₹33,00,000",
+        "90 Days",
+        1, 1, 1, 1, 1
+      );
+
+      // Challenge 1 (Smart Waste) -> Startup 8 (MedDrishti)
+      insertApp.run(
+        20,
+        1,
+        8,
+        "Approved",
+        "Sanitation worker wearable biometrics and route environmental exposure telemetry kit.",
+        "₹27,50,000",
+        "75 Days",
+        1, 1, 1, 1, 1
+      );
       insertApp.finalize();
 
       // 4. Evaluations (4 evaluations)
@@ -810,6 +1066,34 @@ export function seedData(db) {
         91.5,
         "VanaDrishti dual optical-thermal payload delivers high accuracy early ember detection even in dense canopies.",
         "Approved for Pilot"
+      );
+
+      insertEval.run(
+        7,
+        12,
+        "Dr. Ramesh Chandra (Central Ground Water Board)",
+        86.0,
+        87.0,
+        86.0,
+        82.0,
+        86.0,
+        85.5,
+        "BhuJal hydrostatic probes provide stable pressure calibration without sensor drift under deep borehole hydrostatic heads.",
+        "Approved for Pilot"
+      );
+
+      insertEval.run(
+        8,
+        2,
+        "Er. S. K. Sharma (State Pollution Control Board)",
+        82.0,
+        80.0,
+        84.0,
+        79.0,
+        81.0,
+        81.2,
+        "Route optimization algorithm requires additional validation under heavy monsoon traffic congestion parameters.",
+        "Request Changes"
       );
       insertEval.finalize();
 
@@ -917,9 +1201,55 @@ export function seedData(db) {
         "Completed",
         "Completed"
       );
+
+      // Pilot 5: EduVision on School Attendance
+      insertPilot.run(
+        5,
+        3,
+        2,
+        3,
+        "School Education Department",
+        "Automated facial recognition & edge computer vision for multi-student attendance logging without bottlenecks in 50 government schools.",
+        "100 Days",
+        "₹28,00,000",
+        "2026-08-15",
+        "2026-11-25",
+        "Edge TPU Hardware Installation (50 Schools)",
+        "Completed",
+        "Student Enrollment & Multi-Face Verification",
+        "Completed",
+        "Attendance Database Stress Testing",
+        "In Progress",
+        "STQC Security & Privacy Audit",
+        "In Progress",
+        "In Progress"
+      );
+
+      // Pilot 6: KrishiSheet ColdTech on Solar Cold Storage
+      insertPilot.run(
+        6,
+        6,
+        6,
+        9,
+        "Department of Agriculture & Farmers Welfare",
+        "Off-grid 5MT solar thermal battery cold storage units at rural primary agricultural produce collection centres.",
+        "120 Days",
+        "₹42,00,000",
+        "2026-08-20",
+        "2026-12-20",
+        "Site Preparation & Thermal Chamber Assembly",
+        "Completed",
+        "Solar Rooftop & PCM Charging Integration",
+        "Completed",
+        "Produce Spoilage & Temperature Logging",
+        "Completed",
+        "ICAR Agricultural Audit & Certification",
+        "In Progress",
+        "In Progress"
+      );
       insertPilot.finalize();
 
-      // 6. Performance Reports (3 reports)
+      // 6. Performance Reports (6 reports)
       const insertPerf = db.prepare(`
         INSERT INTO performance_reports (
           id, pilot_id,
@@ -1025,6 +1355,54 @@ export function seedData(db) {
         "Chief Conservator of Forests issued technical validation clearance.",
         "Validated by Forest Survey Directorate & Remote Sensing Center"
       );
+
+      insertPerf.run(
+        5,
+        5,
+        "Multi-Student Recognition Accuracy",
+        "98.0%",
+        "99.1%",
+        "+1.1%",
+        "TARGET ACHIEVED",
+        "Attendance Logging Speed",
+        "2.0 sec",
+        "1.8 sec",
+        "-0.2 sec (Faster)",
+        "TARGET ACHIEVED",
+        "Privacy Compliance Rating",
+        "100%",
+        "100%",
+        "0.0%",
+        "TARGET ACHIEVED",
+        "TARGET ACHIEVED",
+        "STQC IT Directorate verified that edge facial biometric hashes conform to DPDP Act 2023 regulations.",
+        "District Education Officer certified zero false absentees. Recommended for district-wide rollout.",
+        "Validated by STQC IT Directorate & Education Board"
+      );
+
+      insertPerf.run(
+        6,
+        6,
+        "Post-Harvest Spoilage Reduction",
+        "30.0%",
+        "38.0%",
+        "+8.0%",
+        "TARGET ACHIEVED",
+        "Thermal Hold Autonomous Backup",
+        "48 hr",
+        "64 hr",
+        "+16 hr (Longer)",
+        "TARGET ACHIEVED",
+        "Storage Temperature Stability",
+        "4.0°C ± 1°C",
+        "4.1°C ± 0.4°C",
+        "Tight Tolerance",
+        "TARGET ACHIEVED",
+        "TARGET ACHIEVED",
+        "ICAR certified that phase change thermal material maintained uninterrupted cold chain without auxiliary diesel generation.",
+        "Mandi Board certified significant income recovery for local tomato growers.",
+        "Validated by ICAR Agricultural Engineering Institute"
+      );
       insertPerf.finalize();
 
       // 7. Procurement Decisions (2 decisions)
@@ -1085,6 +1463,40 @@ export function seedData(db) {
         "2026-09-25",
         "Procurement sanctioned for state wildlife division under special disaster management innovation provisions.",
         "GFR 2017 Rule 149 / Single Source Proven Innovation"
+      );
+
+      // Pilot 6: Solar Cold Storage
+      insertProc.run(
+        4,
+        6,
+        9,
+        6,
+        "₹42,00,000",
+        "Pilot Validated: 38% Spoilage Reduction",
+        "All 3 KPIs Exceeded (64 hr thermal hold vs 48 hr target)",
+        "Score: 89.0 / 100 (Dr. S. K. Mahapatra)",
+        "Certified by ICAR Agricultural Engineering Institute",
+        "PROCUREMENT APPROVED",
+        "2026-09-27",
+        "Sanctioned for commercial procurement under State Horticulture Development Mission.",
+        "GFR 2017 Rule 149 / Single Source Proven Innovation"
+      );
+
+      // Pilot 5: School Attendance
+      insertProc.run(
+        5,
+        5,
+        3,
+        2,
+        "₹28,00,000",
+        "Pilot Validated: 50 Government Schools Deployed",
+        "All KPIs Exceeded (99.1% recognition rate)",
+        "Score: 87.5 / 100 (Prof. Sunita Raman)",
+        "Certified by STQC Directorate",
+        "Under Procurement Review",
+        "2026-09-28",
+        "STQC certification submitted. Direct commercial purchase pending Competent Authority sign-off for 150 schools.",
+        "GFR 2017 Rule 149 / Pilot Proven Relaxation"
       );
       insertProc.finalize();
 
@@ -1158,6 +1570,34 @@ export function seedData(db) {
         2,
         8,
         16,
+        "SOLUTION SCALED",
+        "2026-09-28"
+      );
+
+      insertScale.run(
+        4,
+        4,
+        9,
+        "KrishiSheet ColdTech",
+        "Decentralized Solar Cold Storage for Perishable Crops",
+        1,
+        3,
+        14,
+        32,
+        "READY FOR SCALE-UP",
+        "2026-09-28"
+      );
+
+      insertScale.run(
+        5,
+        5,
+        3,
+        "EduVision",
+        "Automated School Attendance Verification",
+        1,
+        3,
+        12,
+        150,
         "READY FOR SCALE-UP",
         "2026-09-28"
       );
@@ -1176,6 +1616,8 @@ export function seedData(db) {
       insertNotif.run(4, "Performance Validation Required", "Pilot #1 reached final benchmark criteria. PWD audit report submitted.", "performance", 0, "2026-09-27 15:45:00");
       insertNotif.run(5, "Procurement Decision Pending", "WaterSense pilot validation approved. Awaiting Procurement Authority sanction.", "procurement", 0, "2026-09-27 16:20:00");
       insertNotif.run(6, "Scale-Up Authorization Completed", "Statewide expansion authorized for WaterSense across 5 departments.", "scale", 1, "2026-09-28 09:00:00");
+      insertNotif.run(7, "Disbursal Released", "Milestone 2 payment of ₹75,000 processed via PFMS for EduVision.", "payment", 0, "2026-09-28 11:30:00");
+      insertNotif.run(8, "New Challenge Published", "Traffic Police published 'Smart Urban Traffic Adaptive Signal Control'.", "challenge", 0, "2026-09-28 12:45:00");
       insertNotif.finalize();
 
       // 11. Documents
@@ -1195,6 +1637,10 @@ export function seedData(db) {
       insertDoc.run(8, "Competent Authority Procurement Sanction Order", "Procurement Decision", "procurement", 1, "Govt_Sanction_Order_GFR149_Proc.pdf", "880 KB", "2026-09-22", "Pending Release");
       insertDoc.run(9, "DGCA UAS Type Approval Certificate — VanaDrishti", "Startup Registration", "startup", 10, "DGCA-UAS-VANA-2026.pdf", "1.8 MB", "2026-07-15", "Verified");
       insertDoc.run(10, "Multi-District Scale-Up Deployment Sanction Order", "Procurement Decision", "procurement", 3, "Scale-Sanction-Order-2026.pdf", "1.3 MB", "2026-09-28", "Sanctioned");
+      insertDoc.run(11, "Municipal Solid Waste RFP Specifications", "Problem Statement", "challenge", 1, "MUNICIPAL-SWM-2026.pdf", "2.2 MB", "2026-09-18", "Active");
+      insertDoc.run(12, "DPDP Act 2023 Data Privacy Audit Certificate — CivicPulse", "Validation Report", "startup", 6, "DPDP-AUDIT-CIVIC.pdf", "940 KB", "2026-08-20", "Certified");
+      insertDoc.run(13, "Central Ground Water Board Sensor Calibration Report", "Validation Report", "pilot", 5, "CGWB-BHUJAL-0926.pdf", "1.6 MB", "2026-09-28", "Verified");
+      insertDoc.run(14, "Tripartite Scale-Up Agreement (State Mission + Startup + Discom)", "Pilot Agreement", "pilot", 3, "TRIPARTITE-SCALE-2026.pdf", "2.8 MB", "2026-09-28", "Signed");
       insertDoc.finalize();
 
       console.log("Database seeded successfully with ProcureFlow enterprise sample dataset!");
