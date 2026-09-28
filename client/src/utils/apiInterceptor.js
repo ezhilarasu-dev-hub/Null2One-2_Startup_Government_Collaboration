@@ -4,7 +4,7 @@
  */
 
 const SEED_DATA = {
-  version: 3,
+  version: 4,
   challenges: [
     {
       id: 1,
@@ -1320,12 +1320,24 @@ const SEED_DATA = {
 
 // Initialize localStorage with seed data if not present or needs updating
 function getLocalStore() {
+  // Clean legacy store keys if present
+  try {
+    localStorage.removeItem('startupbridge_mock_store');
+  } catch (e) {}
+
   const stored = localStorage.getItem('procure_portal_data');
   if (stored) {
     try {
       const parsed = JSON.parse(stored);
-      // If store is older schema with fewer than 20 applications, refresh with richer seed
-      if (parsed.version === 3 && parsed.applications && parsed.applications.length >= 20) {
+      // If store is current version 4 and has all required sample records, return it
+      if (
+        parsed &&
+        parsed.version === 4 &&
+        Array.isArray(parsed.applications) &&
+        parsed.applications.length >= 20 &&
+        Array.isArray(parsed.challenges) &&
+        parsed.challenges.length >= 10
+      ) {
         return parsed;
       }
     } catch (e) {
@@ -1348,16 +1360,27 @@ window.fetch = async function (resource, options = {}) {
 
   // Only handle /api calls
   if (url && url.startsWith('/api')) {
-    try {
-      const response = await originalFetch(resource, options);
-      // If server responded cleanly, return standard response
-      if (response.ok || (response.status >= 200 && response.status < 400)) {
-        return response;
+    const isLocalhost = typeof window !== 'undefined' && (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
+    );
+
+    // On localhost, attempt to fetch from backend server if running
+    if (isLocalhost) {
+      try {
+        const response = await originalFetch(resource, options);
+        const contentType = response.headers.get('content-type') || '';
+        // Only return if it's a real JSON API response, not an HTML fallback
+        if ((response.ok || (response.status >= 200 && response.status < 400)) && contentType.includes('application/json')) {
+          return response;
+        }
+      } catch (err) {
+        // Fall through to mock store
       }
-      // If 404 or 502/503 (e.g. backend not present on static Vercel), fall through to mock
-    } catch (err) {
-      // Network failure / server not running: fall through to mock
     }
+
+    // On Vercel / production or when backend is unavailable,
+    // immediately serve from the rich pre-seeded mock store below!
 
     // Handle with local mock store
     const store = getLocalStore();
@@ -1576,20 +1599,34 @@ window.fetch = async function (resource, options = {}) {
       return mockResponse(store.notifications);
     }
 
+    if (pathname.startsWith('/api/notifications/') && pathname.endsWith('/read')) {
+      const notifId = parseInt(pathname.split('/')[3]);
+      const notif = store.notifications.find(n => n.id === notifId);
+      if (notif) {
+        notif.is_read = 1;
+        saveLocalStore(store);
+      }
+      return mockResponse({ success: true });
+    }
+
     // 11. Payments
     if (pathname === '/api/payments') {
       return mockResponse({
         summary: {
-          totalContractValue: 620000,
-          paidAmount: 620000,
-          pendingAmount: 0
+          totalContractValue: 1060000,
+          paidAmount: 885000,
+          pendingAmount: 175000
         },
         payments: [
           { id: 1, pilot_id: 1, milestone_number: 1, title: "Hardware Deployment", amount: 50000, status: "Paid", paid_date: "2026-06-15", transaction_ref: "PFMS-TXN-2026-8812" },
           { id: 2, pilot_id: 1, milestone_number: 2, title: "Baseline Acoustic Testing", amount: 75000, status: "Paid", paid_date: "2026-07-20", transaction_ref: "PFMS-TXN-2026-9430" },
-          { id: 3, pilot_id: 1, milestone_number: 3, title: "Performance Validation", amount: 100000, status: "Paid", paid_date: "2026-08-30", transaction_ref: "PFMS-TXN-2026-9901" }
+          { id: 3, pilot_id: 1, milestone_number: 3, title: "Performance Validation", amount: 100000, status: "Pending", paid_date: null, transaction_ref: null }
         ]
       });
+    }
+
+    if (pathname.startsWith('/api/payments/') && pathname.endsWith('/pay')) {
+      return mockResponse({ success: true, status: 'Paid', transactionRef: 'PFMS-TXN-2026-' + Math.floor(1000 + Math.random() * 9000) });
     }
 
     // 12. Search

@@ -236,15 +236,18 @@ export function initDatabase() {
 
 function checkAndSeed(db) {
   return new Promise((resolve, reject) => {
-    db.get("SELECT COUNT(*) as count FROM challenges", (err, row) => {
-      if (err) return reject(err);
-      if (row.count === 0) {
-        console.log("Seeding fresh demo data for StartupBridge...");
-        seedData(db).then(resolve).catch(reject);
-      } else {
-        resolve();
+    db.get(
+      "SELECT (SELECT COUNT(*) FROM challenges) as chCount, (SELECT COUNT(*) FROM applications) as appCount",
+      (err, row) => {
+        if (err) return reject(err);
+        if (!row || row.chCount < 10 || row.appCount < 20) {
+          console.log("Seeding / refreshing complete 20-application enterprise dataset for Procure Government Portal...");
+          seedData(db).then(resolve).catch(reject);
+        } else {
+          resolve();
+        }
       }
-    });
+    );
   });
 }
 
