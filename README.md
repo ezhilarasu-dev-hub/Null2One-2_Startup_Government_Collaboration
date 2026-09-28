@@ -1,7 +1,7 @@
-# ProcureSetu
+# Procure Government Portal (Prototype)
 ### Public Procurement & Startup Portal
 
-ProcureSetu is a dedicated public procurement and startup collaboration portal built to standard government digital service specifications. It provides an evidence-based mechanism for government departments to discover verified deep-tech startups, execute structured field pilots, audit milestone telemetry, and transition proven innovations into direct commercial procurement under public procurement innovation provisions.
+Procure Government Portal (Prototype) is a dedicated public procurement and startup collaboration portal built to standard government digital service specifications. It provides an evidence-based mechanism for government departments to discover verified deep-tech startups, execute structured field pilots, audit milestone telemetry, and transition proven innovations into direct commercial procurement under public procurement innovation provisions.
 
 ---
 

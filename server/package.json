@@ -1,7 +1,7 @@
 {
-  "name": "procuresetu-server",
+  "name": "procure-government-portal-server",
   "version": "1.0.0",
-  "description": "Backend API for ProcureSetu Public Procurement & Startup Portal",
+  "description": "Backend API for Procure Government Portal (Prototype)",
   "main": "index.js",
   "type": "module",
   "scripts": {

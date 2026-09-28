@@ -34,7 +34,7 @@ export default function ProductGuideModal({ isOpen, onClose }) {
       <div className="modal-content" style={{ maxWidth: '640px' }}>
         <div className="modal-header">
           <div>
-            <div className="modal-title">ProcureSetu Portal Guide</div>
+            <div className="modal-title">Procure Government Portal (Prototype) Guide</div>
             <div style={{ fontSize: '0.78rem', color: '#64748B' }}>
               Public Procurement & Startup Collaboration Walkthrough
             </div>
@@ -49,7 +49,7 @@ export default function ProductGuideModal({ isOpen, onClose }) {
 
         <div className="modal-body" style={{ maxHeight: '65vh', overflowY: 'auto' }}>
           <p style={{ fontSize: '0.84rem', color: '#475569', lineHeight: 1.5, marginBottom: '16px' }}>
-            ProcureSetu provides an evidence-based pathway for public departments to discover, test, and procure proven startup innovations through controlled pilots:
+            This portal provides a standardized public procurement pathway for government departments to discover, evaluate, pilot, and scale startup innovations:
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

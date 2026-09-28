@@ -1,8 +1,8 @@
 {
-  "name": "procuresetu",
+  "name": "procure-government-portal",
   "version": "1.0.0",
   "private": true,
-  "description": "ProcureSetu — Public Procurement & Startup Portal",
+  "description": "Procure Government Portal (Prototype)",
   "scripts": {
     "build": "cd client && npm install && npm run build",
     "dev": "cd client && npm run dev",

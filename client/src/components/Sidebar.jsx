@@ -51,10 +51,14 @@ export default function Sidebar() {
       {/* Brand Identity */}
       <div className="sidebar-brand">
         <div className="platform-emblem">
-          <div className="emblem-icon">PS</div>
+          <div className="emblem-icon">GOV</div>
           <div>
-            <div className="platform-title">ProcureSetu</div>
-            <div className="platform-subtitle">Public Procurement Portal</div>
+            <div className="platform-title" style={{ fontSize: '0.96rem', lineHeight: '1.2' }}>
+              Procure Government Portal
+            </div>
+            <div className="platform-subtitle" style={{ color: '#FCD34D', fontWeight: 600 }}>
+              (Prototype)
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 /**
- * ProcureSetu — Client-Side Mock API Interceptor for Vercel & Offline Deployments
+ * Procure Government Portal (Prototype) — Client-Side Mock API Interceptor for Vercel Deployments
  * Transparently falls back to pre-seeded localStorage dataset when running on Vercel or when backend is unreachable.
  */
 

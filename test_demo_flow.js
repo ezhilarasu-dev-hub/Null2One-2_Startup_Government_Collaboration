@@ -1,8 +1,8 @@
-// Comprehensive End-to-End Verification Test Script for ProcureSetu
+// Comprehensive End-to-End Verification Test Script for Procure Government Portal (Prototype)
 
 async function runDemoFlowTest() {
   console.log("==================================================");
-  console.log("PROCURESETU — END-TO-END WORKFLOW VERIFICATION");
+  console.log("PROCURE GOVERNMENT PORTAL (PROTOTYPE) — END-TO-END VERIFICATION");
   console.log("==================================================\n");
 
   const baseUrl = "http://localhost:5000";
@@ -234,7 +234,7 @@ async function runDemoFlowTest() {
   }
 
   console.log("\n==================================================");
-  console.log("ALL PROCURESETU END-TO-END WORKFLOW STEPS VERIFIED WITH 100% SUCCESS!");
+  console.log("ALL PROCURE GOVERNMENT PORTAL (PROTOTYPE) STEPS VERIFIED WITH 100% SUCCESS!");
   console.log("==================================================");
 }
 
